@@ -1,839 +1,318 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head><link rel="icon" type="image/png" href="/favicon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EO Labs | Yazılım Teknolojileri</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0B0D13;
-      --surface: #12151F;
-      --surface-hover: #181C2A;
-      --border: #1F2433;
-      --border-hover: #333A52;
-      --text: #F1F5F9;
-      --text-muted: #94A3B8;
-      --text-dim: #64748B;
-      --accent-blue: #38BDF8;
-      --accent-green: #25D366;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    header.site-header {
-      position: sticky;
-      top: 0;
-      background: rgba(11, 13, 19, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 16px 0;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo-link {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .brand-logo {
-      height: 30px;
-      width: auto;
-      display: block;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-
-    .nav-link:hover {
-      color: #FFFFFF;
-    }
-
-    /* WhatsApp Butonu */
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(37, 211, 102, 0.12);
-      color: #25D366;
-      border: 1px solid rgba(37, 211, 102, 0.3);
-      padding: 8px 18px;
-      border-radius: 9999px;
-      font-size: 13.5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .whatsapp-btn:hover {
-      background: #25D366;
-      color: #0B0D13;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
-    }
-
-    .whatsapp-btn svg {
-      width: 17px;
-      height: 17px;
-      fill: currentColor;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 90px 0 70px 0;
-      text-align: center;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      background: #141722;
-      border: 1px solid var(--border);
-      border-radius: 9999px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--accent-blue);
-      margin-bottom: 24px;
-      letter-spacing: 0.3px;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent-blue);
-      border-radius: 50%;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.65;
-    }
-
-    /* Projeler Bölümü - 2x2 Masaüstü, Tek Sütun Mobil */
-    .section-title-wrap {
-      margin-bottom: 36px;
-    }
-
-    .section-eyebrow {
-      font-size: 11.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-dim);
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.02em;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-bottom: 96px;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .project-card:hover {
-      border-color: var(--border-hover);
-      background: var(--surface-hover);
-      transform: translateY(-2px);
-    }
-
-    /* Teknoloji Ekran / Arayüz Mockup Görseli */
-    .mockup-window {
-      background: #0D0F16;
-      border-bottom: 1px solid var(--border);
-      padding: 16px;
-      height: 190px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .mockup-topbar {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .window-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #252A38;
-    }
-
-    .mockup-body {
-      flex: 1;
-      border-radius: 8px;
-      background: #11141E;
-      border: 1px solid #1C212E;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-    }
-
-    .mockup-header-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .mockup-brand {
-      font-size: 13px;
-      font-weight: 700;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .mockup-tag {
-      font-size: 10px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Mockup İç Arayüz Grafikleri */
-    .mockup-data-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin: 10px 0;
-    }
-
-    .data-pill {
-      background: #0B0D14;
-      border: 1px solid #191E2C;
-      border-radius: 6px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .data-num {
-      font-size: 13px;
-      font-weight: 700;
-      color: #FFFFFF;
-      display: block;
-    }
-
-    .data-sub {
-      font-size: 9px;
-      color: var(--text-dim);
-      text-transform: uppercase;
-    }
-
-    .mockup-statusbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--text-dim);
-    }
-
-    .mockup-statusbar span.active {
-      color: #34D399;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Kart Bilgileri */
-    .project-info {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
-    }
-
-    .project-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .project-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.01em;
-    }
-
-    .project-status-label {
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--accent-blue);
-    }
-
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 13.5px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    .project-stack {
-      color: var(--text-dim);
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .project-link-text {
-      color: #FFFFFF;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .project-card:hover .project-link-text {
-      color: var(--accent-blue);
-    }
-
-    /* Stüdyo & Künye Bloğu */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 96px;
-    }
-
-    .info-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-    }
-
-    .info-panel h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
-    }
-
-    .info-panel p {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.65;
-      margin-bottom: 12px;
-    }
-
-    .stack-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .stack-badge {
-      background: #0B0D14;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    /* Künye Tablosu */
-    .meta-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #1A1F2C;
-      font-size: 13.5px;
-    }
-
-    .meta-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .meta-label {
-      color: var(--text-dim);
-    }
-
-    .meta-val {
-      color: #FFFFFF;
-      font-weight: 500;
-      text-decoration: none;
-      text-align: right;
-    }
-
-    .meta-val a {
-      color: #FFFFFF;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .meta-val a:hover {
-      color: var(--accent-blue);
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
-      background: #08090E;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: var(--text-dim);
-    }
-
-    .footer-inner strong {
-      color: #FFFFFF;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .footer-links a {
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .footer-links a:hover {
-      color: #FFFFFF;
-    }
-
-    /* Mobil Uyum (Responsive) */
-    @media (max-width: 820px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .studio-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .hero {
-        padding: 60px 0 50px 0;
-      }
-      .meta-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-      .meta-val {
-        text-align: left;
-      }
-    }
-  </style>
+<head><link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EO Labs | Yazılım ve Dijital Çözümler</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --whatsapp-color: #10b981; /* Kurumsal yeşil/turkuaz tonu */
+            --text-main: #334155;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden; /* Sağa sola kaymayı kesin olarak önler */
+        }
+
+        /* Header & Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-area img {
+            height: 45px; /* Mobilde ve masaüstünde net görünmesi için büyütüldü */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(15px, 2vw, 18px);
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Sections */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Sabit WhatsApp Butonu (Sağ Altta, Kurumsal Renkte) */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-color); /* Kurumsal mavi/ana renk uyumu */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            z-index: 9999;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #1d4ed8;
+        }
+
+        .whatsapp-float svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 13px;
+            border-top: 1px solid #1e293b;
+            width: 100%;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+
+        /* Mobil Uyumluluk (Responsive / Kompakt) Ayarları */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 12px 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+                margin-top: 5px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 20px 10px;
+                margin: 20px auto;
+            }
+
+            .section-container {
+                padding: 40px 15px;
+            }
+
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="#" class="brand-logo-link">
-        <img src="data:image/png;base64,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" class="brand-logo" alt="EO LABS">
-      </a>
-      <div class="header-actions">
-        <a href="#projeler" class="nav-link">Projeler</a>
-        <a href="#kurumsal" class="nav-link">Kurumsal</a>
-        <!-- Doğrudan WhatsApp Butonu -->
-        <a href="https://wa.me/905382091986" target="_blank" class="whatsapp-btn">
-          <svg viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
-          WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="container hero">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span> Mobil, Yapay Zeka &amp; B2B Mimarileri
-    </div>
-    <h1>Yüksek Ölçekli Dijital Platformlar İnşa Ediyoruz.</h1>
-    <p>
-      EO Labs; akıllı ulaşım altyapıları, dış ticaret zekası ve küresel B2B tedarik ağlarına odaklanan bağımsız bir teknoloji stüdyosudur.
-    </p>
-  </section>
-
-  <!-- Projeler -->
-  <main class="container" id="projeler">
-    <div class="section-title-wrap">
-      <div class="section-eyebrow">PORTFÖY</div>
-      <h2 class="section-title">Ürün ve Ekosistem Dizinimiz</h2>
-    </div>
-
-    <div class="projects-grid">
-      
-      <!-- 1: ParkPing -->
-      <a href="https://www.parkping.com.tr" target="_blank" class="project-card">
-        <div class="mockup-window">
-          <div class="mockup-topbar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-header-line">
-              <span class="mockup-brand">🅿️ ParkPing Mobil</span>
-              <span class="mockup-tag">iOS / Android</span>
-            </div>
-            <div class="mockup-data-grid">
-              <div class="data-pill">
-                <span class="data-num">1.4K+</span>
-                <span class="data-sub">Otopark</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">&lt; 2 sn</span>
-                <span class="data-sub">Rezervasyon</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">%100</span>
-                <span class="data-sub">Canlı Doluluk</span>
-              </div>
-            </div>
-            <div class="mockup-statusbar">
-              <span class="active">● Canlı Harita &amp; Rota</span>
-              <span>Flutter Engine</span>
-            </div>
-          </div>
+    <!-- Üst Menü ve Logo -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <!-- Logoyu buraya ekleyebilirsin, text yerine görsel için src alanına dosya adını yazabilirsin -->
+                <span class="logo-text">EO Labs</span>
+            </a>
+            <nav>
+                <a href="#kurumsal">Kurumsal</a>
+                <a href="#projeler">Projeler</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="project-info">
-          <div>
-            <div class="project-title-row">
-              <h3 class="project-title">ParkPing</h3>
-              <span class="project-status-label">Son Aşamada</span>
-            </div>
-            <p class="project-desc">
-              Sürücüler için otopark bulmayı, rota optimizasyonunu ve anlık yer rezervasyonunu uçtan uca dijitalleştiren kullanıcı uygulaması.
-            </p>
-          </div>
-          <div class="project-footer">
-            <span class="project-stack">Flutter • Dart • Supabase</span>
-            <span class="project-link-text">parkping.com.tr ↗</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 2: ParkFlow -->
-      <a href="https://parkflow.com.tr" target="_blank" class="project-card">
-        <div class="mockup-window">
-          <div class="mockup-topbar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-header-line">
-              <span class="mockup-brand">⚡ ParkFlow Core</span>
-              <span class="mockup-tag">B2B SaaS</span>
-            </div>
-            <div class="mockup-data-grid">
-              <div class="data-pill">
-                <span class="data-num">ANPR</span>
-                <span class="data-sub">Plaka Tanıma</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">IoT</span>
-                <span class="data-sub">Bariyer API</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">Gelir</span>
-                <span class="data-sub">Oto-Tahsilat</span>
-              </div>
-            </div>
-            <div class="mockup-statusbar">
-              <span class="active">● Saha Entegrasyonu Hazır</span>
-              <span>Deno Cloud</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-info">
-          <div>
-            <div class="project-title-row">
-              <h3 class="project-title">ParkFlow</h3>
-              <span class="project-status-label">Son Aşamada</span>
-            </div>
-            <p class="project-desc">
-              Otopark işletmeleri ve valeler için akıllı bariyer otomasyonu, plaka tanıma ve merkezi gelir yönetim altyapısı sunan kurumsal çözüm.
-            </p>
-          </div>
-          <div class="project-footer">
-            <span class="project-stack">ParkFlow Core • IoT • PostgreSQL</span>
-            <span class="project-link-text">parkflow.com.tr ↗</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 3: OnlineTürkiye -->
-      <a href="http://onlineturkey.com" target="_blank" class="project-card">
-        <div class="mockup-window">
-          <div class="mockup-topbar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-header-line">
-              <span class="mockup-brand">🌐 OnlineTürkiye</span>
-              <span class="mockup-tag">B2B Sourcing</span>
-            </div>
-            <div class="mockup-data-grid">
-              <div class="data-pill">
-                <span class="data-num">Global</span>
-                <span class="data-sub">Alıcı Ağı</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">Doğrulanmış</span>
-                <span class="data-sub">Türk Üretici</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">AI Match</span>
-                <span class="data-sub">Tedarik Eşleme</span>
-              </div>
-            </div>
-            <div class="mockup-statusbar">
-              <span class="active">● Geliştirme Aşamasında</span>
-              <span>Next.js • Cloudflare</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-info">
-          <div>
-            <div class="project-title-row">
-              <h3 class="project-title">OnlineTürkiye</h3>
-              <span class="project-status-label" style="color: #A5B4FC;">Geliştirme / B2B</span>
-            </div>
-            <p class="project-desc">
-              Türkiye’den ürün arayan dünya çapındaki alıcılar ile doğru Türk üreticileri doğrudan eşleştiren, yapay zeka destekli B2B tedarik platformu.
-            </p>
-          </div>
-          <div class="project-footer">
-            <span class="project-stack">AI Sourcing • Global Export Network</span>
-            <span class="project-link-text">onlineturkey.com ↗</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 4: GümrükAI -->
-      <a href="https://www.gumrukai.com" target="_blank" class="project-card">
-        <div class="mockup-window">
-          <div class="mockup-topbar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-header-line">
-              <span class="mockup-brand">🤖 GümrükAI</span>
-              <span class="mockup-tag">RegTech AI</span>
-            </div>
-            <div class="mockup-data-grid">
-              <div class="data-pill">
-                <span class="data-num">GTİP</span>
-                <span class="data-sub">Oto-Tespit</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">Mevzuat</span>
-                <span class="data-sub">Canlı Tarama</span>
-              </div>
-              <div class="data-pill">
-                <span class="data-num">Risk</span>
-                <span class="data-sub">Analiz Raporu</span>
-              </div>
-            </div>
-            <div class="mockup-statusbar">
-              <span class="active">● Geliştirme Aşamasında</span>
-              <span>LLM Pipeline</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-info">
-          <div>
-            <div class="project-title-row">
-              <h3 class="project-title">GümrükAI</h3>
-              <span class="project-status-label" style="color: #A5B4FC;">Geliştirme / RegTech</span>
-            </div>
-            <p class="project-desc">
-              Dış ticaret mevzuatını, GTİP sınıflandırmalarını ve gümrük beyanname süreçlerini saniyeler içinde analiz eden yapay zeka asistanı.
-            </p>
-          </div>
-          <div class="project-footer">
-            <span class="project-stack">Mevzuat Analitiği • Dış Ticaret Zekası</span>
-            <span class="project-link-text">gumrukai.com ↗</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- Stüdyo & Resmi Künye -->
-    <section id="kurumsal" class="studio-grid">
-      <div class="info-panel">
-        <h3>Mühendislik Standartlarımız</h3>
-        <p>
-          EO Labs Yazılım Teknolojileri (Eyüp Özkan); yüksek performanslı mobil uygulamaları, reaktif kullanıcı arayüzlerini ve ölçeklenebilir bulut servislerini bir arada üretir.
-        </p>
-        <p>
-          Geliştirilen altyapılar Apple App Store ve Google Play kurumsal gereksinimlerine, yüksek eşzamanlı veri işleme kapasitesine ve veri güvenliği standartlarına tam uyumludur.
-        </p>
-        <div class="stack-tags">
-          <span class="stack-badge">Flutter &amp; Dart</span>
-          <span class="stack-badge">Swift</span>
-          <span class="stack-badge">Supabase</span>
-          <span class="stack-badge">Deno</span>
-          <span class="stack-badge">Cloudflare</span>
-          <span class="stack-badge">Vercel</span>
-        </div>
-      </div>
-
-      <div class="info-panel">
-        <h3>Resmi Bilgiler &amp; İletişim</h3>
-        <div class="meta-list">
-          <div class="meta-row">
-            <span class="meta-label">Yasal Ticari Unvan</span>
-            <span class="meta-val">EO Labs Yazılım Teknolojileri - Eyüp Özkan</span>
-          </div>
-
-          <div class="meta-row">
-            <span class="meta-label">Merkez &amp; Lokasyon</span>
-            <span class="meta-val">Osmangazi / BURSA</span>
-          </div>
-
-          <div class="meta-row">
-            <span class="meta-label">Doğrudan Telefon</span>
-            <span class="meta-val"><a href="tel:05382091986">0538 209 19 86</a></span>
-          </div>
-
-          <div class="meta-row">
-            <span class="meta-label">Kurumsal E-Posta</span>
-            <span class="meta-val"><a href="mailto:info@eolabs.com.tr">info@eolabs.com.tr</a></span>
-          </div>
-        </div>
-      </div>
+    <!-- Ana Karşılama Alanı -->
+    <section class="hero">
+        <h1>Geleceğin Yazılım Teknolojileri</h1>
+        <p>EO Labs olarak işletmeniz için ölçeklenebilir, modern ve güvenilir dijital çözümler üretiyoruz.</p>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <span><strong>EO Labs</strong> © 2026 Tüm hakları saklıdır.</span>
-      <div class="footer-links">
-        <a href="https://www.parkping.com.tr" target="_blank">ParkPing</a>
-        <a href="https://parkflow.com.tr" target="_blank">ParkFlow</a>
-        <a href="http://onlineturkey.com" target="_blank">OnlineTürkiye</a>
-        <a href="https://www.gumrukai.com" target="_blank">GümrükAI</a>
-      </div>
+    <!-- Kurumsal & Projeler Alanı -->
+    <div class="section-container" id="kurumsal">
+        <div class="grid-2">
+            <div class="card">
+                <h3>Kurumsal</h3>
+                <p>Yazılım geliştirme, SaaS çözümleri ve dijital dönüşüm süreçlerinizde profesyonel altyapımızla yanınızdayız.</p>
+            </div>
+            <div class="card" id="projeler">
+                <h3>Projeler</h3>
+                <p>Geliştirdiğimiz yenilikçi mobil uygulamalar, web tabanlı sistemler ve kurumsal yazılım ürünlerimizi keşfedin.</p>
+            </div>
+        </div>
     </div>
-  </footer>
+
+    <!-- Sabit WhatsApp Butonu -->
+    <a href="https://wa.me/905382091986" target="_blank" class="whatsapp-float">
+        <svg viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39c1.45.79 3.09 1.21 4.69 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.39 0-2.75-.37-3.95-1.08l-.28-.17-3.03.8.81-2.95-.18-.3c-.79-1.29-1.21-2.79-1.21-4.33 0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4 1.55 1.55 2.4 3.61 2.4 5.8 0 4.52-3.68 8.2-8.2 8.2zm4.51-6.13c-.25-.13-1.47-.72-1.69-.8-.23-.08-.4-.13-.57.13-.18.25-.66.8-.81.97-.15.17-.31.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.11-.11.25-.31.37-.46.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.5-.41-.43-.57-.44h-.49c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.7.13.18 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.5-.08 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/>
+        </svg>
+        WhatsApp İletişim
+    </a>
+
+    <!-- Footer / Tüm Hakları Saklıdır -->
+    <footer id="iletisim">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Kurumsal</a>
+                <a href="#">Projeler</a>
+                <a href="#">Gizlilik Politikası</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
