@@ -1,267 +1,149 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EO Labs | Dijital Çözümler ve Yazılım</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --text-main: #334155;
-            --bg-light: #f8fafc;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-            width: 100%;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-area img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .hero {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: clamp(15px, 2vw, 18px);
-            color: #64748b;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            z-index: 9999;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .whatsapp-float svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: #94a3b8;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .copyright {
-            font-size: 13px;
-            border-top: 1px solid #1e293b;
-            width: 100%;
-            padding-top: 20px;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 12px 15px;
-            }
-
-            nav {
-                justify-content: center;
-                gap: 15px;
-                margin-top: 5px;
-            }
-
-            .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
-                padding: 10px 16px;
-                font-size: 13px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="EO Labs — araç teknolojileri, dijital ürünler, B2B platformlar ve yeni nesil internet deneyimleri geliştiren bağımsız teknoloji stüdyosu.">
+<title>EO Labs | Yazılım Teknolojileri</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Cpath fill='%23fff' d='M8 13h22l-5 7H16v8h12l-5 7h-7v9h14l6 7H8V13zm31 0h17v31l-7 7H35l-7-8V21l11-8zm2 8-5 5v14l4 4h7l3-4V21h-9z'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#050505;--panel:#0d0e10;--panel2:#121419;--line:#242832;--text:#f6f7f8;--muted:#9ba3af;--blue:#3b82f6;--blue2:#2563eb;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;text-decoration:none;min-width:0}.brand img{display:block;width:190px;max-width:42vw;height:auto}
+nav{display:flex;align-items:center;gap:24px}nav a{text-decoration:none;color:#bcc3cd;font-size:14px;font-weight:650}nav a:hover{color:#fff}.nav-cta{padding:10px 15px;border:1px solid #303744;border-radius:10px;color:#fff!important;background:#11141a}
+.hero{position:relative;overflow:hidden;padding:92px 0 64px;border-bottom:1px solid rgba(255,255,255,.06)}.hero:before{content:"";position:absolute;inset:-20% auto auto 55%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.19),rgba(37,99,235,0) 67%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 10px;border:1px solid #29303b;border-radius:999px;background:#0d1015;color:#b8c0cb;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#3b82f6;box-shadow:0 0 18px #3b82f6}
+.hero h1{max-width:880px;margin:24px 0 22px;font-size:clamp(42px,7.2vw,84px);line-height:.98;letter-spacing:-.055em}.hero h1 span{color:#8e98a8}.hero p{max-width:710px;margin:0;color:#a7afba;font-size:clamp(17px,2vw,20px);line-height:1.7}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 18px;border-radius:11px;text-decoration:none;font-weight:750;font-size:14px}.btn-primary{background:#f5f7fa;color:#070809}.btn-secondary{border:1px solid #2c313b;background:#0d0f13;color:#fff}
+.hero-note{margin-top:42px;display:flex;gap:18px;flex-wrap:wrap;color:#7f8792;font-size:12px}.hero-note span{display:flex;align-items:center;gap:7px}.mini-dot{width:5px;height:5px;background:#596273;border-radius:50%}
+section{padding:78px 0}.section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:end;margin-bottom:34px}.kicker{color:#6f7885;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800}.section-head h2{margin:8px 0 0;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.035em}.section-head p{margin:0;color:#9ca4af;font-size:16px;line-height:1.7}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{position:relative;min-height:250px;padding:28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#111318,#0a0b0d);overflow:hidden}.project:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-90px;top:-100px;background:radial-gradient(circle,rgba(59,130,246,.13),transparent 68%)}.project-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#8e97a5}.status{font-size:11px;color:#9aa3af;padding:5px 8px;border:1px solid #2b3039;border-radius:999px;background:#0b0d10}.project h3{margin:38px 0 10px;font-size:28px;letter-spacing:-.025em}.project p{margin:0;color:#9da5b0;max-width:520px;line-height:1.65}.project-link{display:inline-flex;margin-top:22px;text-decoration:none;color:#e6e9ee;font-size:13px;font-weight:750}.project-link:hover{color:#fff}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.about-card,.principles{border:1px solid var(--line);border-radius:18px;background:#0c0e12;padding:30px}.about-card h3,.principles h3{margin:0 0 14px;font-size:22px}.about-card p{margin:0;color:#9ca4af;line-height:1.8}.principle{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:16px 0;border-top:1px solid #20242b}.principle:first-of-type{border-top:0}.num{color:#626b79;font-size:12px;font-weight:800;padding-top:2px}.principle b{display:block;font-size:14px;margin-bottom:4px}.principle span{color:#8f97a3;font-size:13px}
+.contact{padding-top:12px}.contact-box{position:relative;overflow:hidden;border:1px solid #272c34;border-radius:20px;background:linear-gradient(135deg,#11141a,#08090b);padding:42px}.contact-box:after{content:"EO";position:absolute;right:-20px;bottom:-70px;font-size:230px;font-weight:950;line-height:1;color:rgba(255,255,255,.025);letter-spacing:-.12em}.contact-box h2{margin:0 0 12px;font-size:clamp(30px,4vw,48px);letter-spacing:-.035em}.contact-box p{margin:0 0 24px;color:#99a1ad;max-width:650px}
+footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:24px;align-items:center;border-top:1px solid #1d2026;padding-top:24px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{text-decoration:none}.footer-links a:hover{color:#fff}
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:999px;background:#fff;color:#080808;text-decoration:none;font-size:13px;font-weight:800;box-shadow:0 14px 50px rgba(0,0,0,.38)}.whatsapp svg{width:20px;height:20px}
+@media(max-width:760px){
+.wrap{width:min(100% - 28px,var(--max))}.nav{height:64px}.brand img{width:150px}.nav nav a:not(.nav-cta){display:none}.nav-cta{padding:9px 12px}.hero{padding:64px 0 48px}.hero h1{font-size:48px}.hero p{font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:0 12px}.section-head{grid-template-columns:1fr;gap:16px;margin-bottom:26px}section{padding:58px 0}.projects{grid-template-columns:1fr}.project{min-height:220px;padding:22px}.project h3{margin-top:30px;font-size:24px}.about-grid{grid-template-columns:1fr}.about-card,.principles{padding:23px}.contact-box{padding:28px 22px}.footer-row{align-items:flex-start;flex-direction:column}.whatsapp{right:12px;bottom:12px;padding:12px 14px}
+}
+@media(max-width:390px){.hero-actions{grid-template-columns:1fr}.hero h1{font-size:42px}.brand img{width:138px}}
+</style>
 </head>
 <body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="EO Labs ana sayfa"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAGnBgADASIAAhEBAxEB/8QAHgABAAEEAwEBAAAAAAAAAAAAAAkEBwgKAQUGAgP/xABgEAABAwIDAgULDQsJBgYCAwAAAQIDBAUGBxEICRIVITFREzdBYnSRkrGy0dIUGSIyVFVWYXFyc4GhFhcYNDU2UlOiwcImMzhCRpOUs+IjJ0NEdYIkKEVk4fAlY4Sj4//EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLhbvKvYQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaXoQcbS9CFCAK7jaX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[...truncated for display...]" alt="EO Labs Yazılım Teknolojileri"></a>
+    <nav aria-label="Ana menü">
+      <a href="#projeler">Projeler</a>
+      <a href="#hakkimizda">Biz kimiz</a>
+      <a class="nav-cta" href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo-area">
-                <img src="eolabslogo.png" alt="EO Labs Logo">
-            </a>
-            <nav>
-                <a href="#kurumsal">Kurumsal</a>
-                <a href="#projeler">Projeler</a>
-                <a href="#iletisim">İletişim</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h1>Geleceğin Yazılım Teknolojileri</h1>
-        <p>EO Labs olarak işletmeniz için ölçeklenebilir, modern ve güvenilir dijital çözümler üretiyoruz.</p>
-    </section>
-
-    <div class="section-container" id="kurumsal">
-        <div class="grid-2">
-            <div class="card">
-                <h3>Kurumsal</h3>
-                <p>Yazılım geliştirme, SaaS çözümleri ve dijital dönüşüm süreçlerinizde profesyonel altyapımızla yanınızdayız.</p>
-            </div>
-            <div class="card" id="projeler">
-                <h3>Projeler</h3>
-                <p>Geliştirdiğimiz yenilikçi mobil uygulamalar, web tabanlı sistemler ve kurumsal yazılım ürünlerimizi keşfedin.</p>
-            </div>
-        </div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> Independent Technology Studio</div>
+      <h1>Fikri ürüne, ürünü <span>çalışan sisteme</span> dönüştürüyoruz.</h1>
+      <p>EO Labs; araç teknolojileri, dijital platformlar ve yeni nesil internet ürünleri geliştiren bağımsız bir teknoloji stüdyosudur. Tek bir ürün değil, birbirini tamamlayan sürdürülebilir dijital sistemler kuruyoruz.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projeler">Projeleri keşfet →</a>
+        <a class="btn btn-secondary" href="https://wa.me/905382091986" target="_blank" rel="noopener">Bizimle iletişime geç</a>
+      </div>
+      <div class="hero-note">
+        <span><i class="mini-dot"></i> Türkiye merkezli</span>
+        <span><i class="mini-dot"></i> Mobil + Web</span>
+        <span><i class="mini-dot"></i> Ürün odaklı geliştirme</span>
+      </div>
     </div>
+  </section>
 
-    <a href="https://wa.me/905382091986" target="_blank" class="whatsapp-float">
-        <svg viewBox="0 0 24 24">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39c1.45.79 3.09 1.21 4.69 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.39 0-2.75-.37-3.95-1.08l-.28-.17-3.03.8.81-2.95-.18-.3c-.79-1.29-1.21-2.79-1.21-4.33 0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4 1.55 1.55 2.4 3.61 2.4 5.8 0 4.52-3.68 8.2-8.2 8.2zm4.51-6.13c-.25-.13-1.47-.72-1.69-.8-.23-.08-.4-.13-.57.13-.18.25-.66.8-.81.97-.15.17-.31.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.11-.11.25-.31.37-.46.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.5-.41-.43-.57-.44h-.49c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.7.13.18 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.5-.08 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/>
-        </svg>
-        WhatsApp İletişim
-    </a>
+  <section id="projeler">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">EO Labs Portfolio</div><h2>Projelerimiz</h2></div>
+        <p>Farklı sektörlerde gerçek ihtiyaçlardan doğan ürünler geliştiriyoruz. Her proje kendi markasına, ürün mimarisine ve büyüme modeline sahip.</p>
+      </div>
 
-    <footer id="iletisim">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">Kurumsal</a>
-                <a href="#">Projeler</a>
-                <a href="#">Gizlilik Politikası</a>
-            </div>
-            <div class="copyright">
-                &copy; 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır.
-            </div>
+      <div class="projects">
+        <article class="project">
+          <div class="project-top"><span class="tag">Mobility / Automotive</span><span class="status">Aktif ürün</span></div>
+          <h3>ParkPing</h3>
+          <p>QR ve NFC tabanlı akıllı araç iletişimi ve park asistanı. Telefon numarası paylaşmadan güvenli iletişim, araç yönetimi ve sürücü odaklı dijital servisler.</p>
+          <a class="project-link" href="https://parkping.com.tr" target="_blank" rel="noopener">parkping.com.tr →</a>
+        </article>
+
+        <article class="project">
+          <div class="project-top"><span class="tag">Access / Parking Tech</span><span class="status">Geliştiriliyor</span></div>
+          <h3>ParkFlow</h3>
+          <p>Kurumsal araç erişimi ve otopark yönetimi için ANPR, QR, cihaz yönetimi ve operasyon katmanlarını bir araya getiren platform.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-top"><span class="tag">B2B / Trade</span><span class="status">Geliştiriliyor</span></div>
+          <h3>OnlineTurkey</h3>
+          <p>Türkiye’den güvenilir tedarikçi ve iş ortaklarına ulaşmayı kolaylaştıran, doğrulama ve sourcing deneyimi odaklı B2B iş ağı.</p>
+          <a class="project-link" href="https://onlineturkey.com" target="_blank" rel="noopener">onlineturkey.com →</a>
+        </article>
+
+        <article class="project">
+          <div class="project-top"><span class="tag">Internet / Social</span><span class="status">Konsept geliştirme</span></div>
+          <h3>OnePixel World</h3>
+          <p>Dünya haritasını etkileşimli bir dijital sahiplik ve keşif alanına dönüştüren; konum, görünürlük ve sosyal etkileşimi bir araya getiren yeni nesil web projesi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hakkimizda">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Nasıl çalışıyoruz</div><h2>Az katman. Net ürün. Gerçek kullanım.</h2></div>
+        <p>EO Labs için teknoloji vitrin değil, çalışan üründür. Tasarım, yazılım ve ürün kararlarını aynı sistem içinde yönetir; gereksiz karmaşıklık yerine ölçülebilir kullanıcı değerine odaklanırız.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Bir ürün stüdyosu gibi düşünüyoruz.</h3>
+          <p>Mobil uygulamadan web platformuna, fiziksel üründen kurumsal yönetim katmanına kadar aynı markanın bütün temas noktalarını birlikte ele alıyoruz. Hedefimiz yalnızca çalışan yazılım değil; güven veren, büyüyebilen ve gerçek dünyada kullanılabilen ürünler ortaya çıkarmak.</p>
         </div>
-    </footer>
+        <div class="principles">
+          <h3>Temel yaklaşım</h3>
+          <div class="principle"><div class="num">01</div><div><b>Ürün önce</b><span>Teknolojiyi kullanıcı ihtiyacının arkasına koyarız.</span></div></div>
+          <div class="principle"><div class="num">02</div><div><b>Tek sistem</b><span>Mobil, web, operasyon ve marka aynı mimarinin parçalarıdır.</span></div></div>
+          <div class="principle"><div class="num">03</div><div><b>Gerçek test</b><span>Kararlarımızı gerçek cihaz ve gerçek kullanım senaryolarıyla doğrularız.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="contact" id="iletisim">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>EO Labs ile iletişime geçin.</h2>
+        <p>Projelerimiz, kurumsal iş birlikleri veya teknoloji odaklı yeni fırsatlar için doğrudan bize ulaşabilirsiniz.</p>
+        <a class="btn btn-primary" href="https://wa.me/905382091986" target="_blank" rel="noopener">WhatsApp üzerinden yaz →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>© 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır.</div>
+    <div class="footer-links">
+      <a href="#projeler">Projeler</a>
+      <a href="#hakkimizda">Kurumsal</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/905382091986" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a9.7 9.7 0 0 0-8.3 14.7L2.3 22l5.5-1.4A9.8 9.8 0 1 0 12 2Zm0 17.7a7.7 7.7 0 0 1-3.9-1.1l-.3-.2-3.2.8.9-3.1-.2-.3A7.8 7.8 0 1 1 12 19.7Zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.3-3.3-2.9-.2-.3.2-.4.6-1 .1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.8.9-.8 2.1-.7 2.3.1 2.1 1.8 4.1 3.7 5 2.6 1.3 3.1 1.4 4.2 1.2.7-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z"/></svg>
+  WhatsApp
+</a>
 </body>
 </html>
