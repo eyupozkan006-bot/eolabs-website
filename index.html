@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head><link rel="icon" type="image/png" href="favicon.png">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EO Labs | Yazılım ve Dijital Çözümler</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --primary-color: #0f172a;
             --accent-color: #2563eb;
-            --whatsapp-color: #10b981; /* Kurumsal yeşil/turkuaz tonu */
             --text-main: #334155;
             --bg-light: #f8fafc;
         }
@@ -24,10 +24,9 @@
             color: var(--text-main);
             background-color: var(--bg-light);
             line-height: 1.6;
-            overflow-x: hidden; /* Sağa sola kaymayı kesin olarak önler */
+            overflow-x: hidden;
         }
 
-        /* Header & Navbar */
         header {
             position: sticky;
             top: 0;
@@ -51,21 +50,13 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
             text-decoration: none;
         }
 
         .logo-area img {
-            height: 45px; /* Mobilde ve masaüstünde net görünmesi için büyütüldü */
+            height: 50px;
             width: auto;
             object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
         }
 
         nav {
@@ -87,7 +78,6 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section */
         .hero {
             max-width: 1200px;
             margin: 40px auto;
@@ -109,19 +99,10 @@
             margin: 0 auto 30px auto;
         }
 
-        /* Sections */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            text-align: center;
-            font-weight: 700;
         }
 
         .grid-2 {
@@ -144,12 +125,11 @@
             font-size: 20px;
         }
 
-        /* Sabit WhatsApp Butonu (Sağ Altta, Kurumsal Renkte) */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: var(--accent-color); /* Kurumsal mavi/ana renk uyumu */
+            background-color: var(--accent-color);
             color: white;
             padding: 12px 20px;
             border-radius: 50px;
@@ -161,12 +141,6 @@
             z-index: 9999;
             font-weight: 600;
             font-size: 14px;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.05);
-            background-color: #1d4ed8;
         }
 
         .whatsapp-float svg {
@@ -175,7 +149,6 @@
             fill: white;
         }
 
-        /* Footer */
         footer {
             background-color: var(--primary-color);
             color: #94a3b8;
@@ -206,10 +179,6 @@
             font-size: 14px;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
         .copyright {
             font-size: 13px;
             border-top: 1px solid #1e293b;
@@ -218,7 +187,6 @@
             margin-top: 10px;
         }
 
-        /* Mobil Uyumluluk (Responsive / Kompakt) Ayarları */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -233,19 +201,6 @@
                 margin-top: 5px;
             }
 
-            nav a {
-                font-size: 14px;
-            }
-
-            .hero {
-                padding: 20px 10px;
-                margin: 20px auto;
-            }
-
-            .section-container {
-                padding: 40px 15px;
-            }
-
             .whatsapp-float {
                 bottom: 15px;
                 right: 15px;
@@ -257,12 +212,10 @@
 </head>
 <body>
 
-    <!-- Üst Menü ve Logo -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-area">
-                <!-- Logoyu buraya ekleyebilirsin, text yerine görsel için src alanına dosya adını yazabilirsin -->
-                <span class="logo-text">EO Labs</span>
+                <img src="eolabslogo.png" alt="EO Labs Logo">
             </a>
             <nav>
                 <a href="#kurumsal">Kurumsal</a>
@@ -272,13 +225,11 @@
         </div>
     </header>
 
-    <!-- Ana Karşılama Alanı -->
     <section class="hero">
         <h1>Geleceğin Yazılım Teknolojileri</h1>
         <p>EO Labs olarak işletmeniz için ölçeklenebilir, modern ve güvenilir dijital çözümler üretiyoruz.</p>
     </section>
 
-    <!-- Kurumsal & Projeler Alanı -->
     <div class="section-container" id="kurumsal">
         <div class="grid-2">
             <div class="card">
@@ -292,7 +243,6 @@
         </div>
     </div>
 
-    <!-- Sabit WhatsApp Butonu -->
     <a href="https://wa.me/905382091986" target="_blank" class="whatsapp-float">
         <svg viewBox="0 0 24 24">
             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39c1.45.79 3.09 1.21 4.69 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.39 0-2.75-.37-3.95-1.08l-.28-.17-3.03.8.81-2.95-.18-.3c-.79-1.29-1.21-2.79-1.21-4.33 0-4.52 3.68-8.2 8.2-8.2 2.19 0 4.25.85 5.8 2.4 1.55 1.55 2.4 3.61 2.4 5.8 0 4.52-3.68 8.2-8.2 8.2zm4.51-6.13c-.25-.13-1.47-.72-1.69-.8-.23-.08-.4-.13-.57.13-.18.25-.66.8-.81.97-.15.17-.31.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.11-.11.25-.31.37-.46.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.5-.41-.43-.57-.44h-.49c-.17 0-.45.06-.69.31-.24.25-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.7.13.18 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.5-.08 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/>
@@ -300,7 +250,6 @@
         WhatsApp İletişim
     </a>
 
-    <!-- Footer / Tüm Hakları Saklıdır -->
     <footer id="iletisim">
         <div class="footer-content">
             <div class="footer-links">
