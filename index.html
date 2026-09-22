@@ -13,7 +13,7 @@
 a{color:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
 header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;text-decoration:none;min-width:0}.brand-logo{display:block;width:220px;max-width:46vw;height:auto;object-fit:contain}
-nav{display:flex;align-items:center;gap:24px}nav a{text-decoration:none;color:#bcc3cd;font-size:14px;font-weight:650}nav a:hover{color:#fff}.nav-cta{padding:10px 15px;border:1px solid #303744;border-radius:10px;color:#fff!important;background:#11141a}
+nav{display:flex;align-items:center;gap:24px}nav a{text-decoration:none;color:#bcc3cd;font-size:14px;font-weight:650}nav a:hover{color:#fff}.nav-cta{padding:10px 15px;border:1px solid #303744;border-radius:10px;color:#fff!important;background:#11141a}.lang-switch{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid #2a2f38;border-radius:10px;background:#0b0d10}.lang-btn{border:0;background:transparent;color:#7f8792;padding:6px 8px;border-radius:7px;font:inherit;font-size:11px;font-weight:800;cursor:pointer}.lang-btn.active{background:#f5f7fa;color:#08090a}
 .hero{position:relative;overflow:hidden;padding:92px 0 64px;border-bottom:1px solid rgba(255,255,255,.06)}.hero:before{content:"";position:absolute;inset:-20% auto auto 55%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.19),rgba(37,99,235,0) 67%);pointer-events:none}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 10px;border:1px solid #29303b;border-radius:999px;background:#0d1015;color:#b8c0cb;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#3b82f6;box-shadow:0 0 18px #3b82f6}
 .hero h1{max-width:880px;margin:24px 0 22px;font-size:clamp(42px,7.2vw,84px);line-height:.98;letter-spacing:-.055em}.hero h1 span{color:#8e98a8}.hero p{max-width:710px;margin:0;color:#a7afba;font-size:clamp(17px,2vw,20px);line-height:1.7}
@@ -27,7 +27,7 @@ section{padding:78px 0}.section-head{display:grid;grid-template-columns:.75fr 1.
 footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:24px;align-items:center;border-top:1px solid #1d2026;padding-top:24px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{text-decoration:none}.footer-links a:hover{color:#fff}
 .whatsapp{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:999px;background:#fff;color:#080808;text-decoration:none;font-size:13px;font-weight:800;box-shadow:0 14px 50px rgba(0,0,0,.38)}.whatsapp svg{width:20px;height:20px}
 @media(max-width:760px){
-.wrap{width:min(100% - 28px,var(--max))}.nav{height:64px}.brand-logo{display:block;width:220px;max-width:46vw;height:auto;object-fit:contain}.nav nav a:not(.nav-cta){display:none}.nav-cta{padding:9px 12px}.hero{padding:30px 0 44px}.hero h1{font-size:48px;margin-top:18px}.hero p{font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:0 12px}.section-head{grid-template-columns:1fr;gap:16px;margin-bottom:26px}section{padding:58px 0}.projects{grid-template-columns:1fr}.project{min-height:220px;padding:22px}.project h3{margin-top:30px;font-size:24px}.about-grid{grid-template-columns:1fr}.request-wrap{grid-template-columns:1fr}.request-intro,.request-form{padding:23px}.about-card,.principles{padding:23px}.contact-box{padding:28px 22px}.footer-row{align-items:flex-start;flex-direction:column}.whatsapp{right:12px;bottom:12px;padding:12px 14px}
+.wrap{width:min(100% - 28px,var(--max))}.nav{height:64px}.brand-logo{display:block;width:220px;max-width:46vw;height:auto;object-fit:contain}.nav nav a:not(.nav-cta){display:none}.lang-switch{flex-shrink:0}.nav{gap:10px}.nav nav{gap:8px}.nav-cta{padding:9px 12px}.hero{padding:30px 0 44px}.hero h1{font-size:48px;margin-top:18px}.hero p{font-size:16px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:0 12px}.section-head{grid-template-columns:1fr;gap:16px;margin-bottom:26px}section{padding:58px 0}.projects{grid-template-columns:1fr}.project{min-height:220px;padding:22px}.project h3{margin-top:30px;font-size:24px}.about-grid{grid-template-columns:1fr}.request-wrap{grid-template-columns:1fr}.request-intro,.request-form{padding:23px}.about-card,.principles{padding:23px}.contact-box{padding:28px 22px}.footer-row{align-items:flex-start;flex-direction:column}.whatsapp{right:12px;bottom:12px;padding:12px 14px}
 }
 @media(max-width:390px){.hero-actions{grid-template-columns:1fr}.hero{padding-top:24px}.hero h1{font-size:42px;margin-top:16px}.brand-logo{display:block;width:220px;max-width:46vw;height:auto;object-fit:contain}}
 </style>
@@ -39,8 +39,13 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
     <nav aria-label="Ana menü">
       <a href="#projeler">Projeler</a>
       <a href="#hakkimizda">Biz kimiz</a>
-      <a href="#proje-talebi">Talep Oluştur</a>
-      <a class="nav-cta" href="#iletisim">İletişim</a>
+      <a href="#proje-talebi" data-i18n="nav_request">Talep Oluştur</a>
+      <a class="nav-cta" href="#iletisim" data-i18n="nav_contact">İletişim</a>
+      <div class="lang-switch" aria-label="Dil seçimi">
+        <button class="lang-btn active" type="button" data-lang="tr">TR</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="fr">FR</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -48,12 +53,12 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot"></span> Independent Technology Studio</div>
-      <h1>Fikri ürüne, ürünü <span>çalışan sisteme</span> dönüştürüyoruz.</h1>
-      <p>EO Labs; araç teknolojileri, dijital platformlar ve yeni nesil internet ürünleri geliştiren bağımsız bir teknoloji stüdyosudur. Tek bir ürün değil, birbirini tamamlayan sürdürülebilir dijital sistemler kuruyoruz.</p>
+      <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Independent Technology Studio</span></div>
+      <h1 data-i18n-html="hero_title">Fikri ürüne, ürünü <span>çalışan sisteme</span> dönüştürüyoruz.</h1>
+      <p data-i18n="hero_desc">EO Labs; araç teknolojileri, dijital platformlar ve yeni nesil internet ürünleri geliştiren bağımsız bir teknoloji stüdyosudur. Tek bir ürün değil, birbirini tamamlayan sürdürülebilir dijital sistemler kuruyoruz.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projeler">Projeleri keşfet →</a>
-        <a class="btn btn-secondary" href="https://wa.me/905382091986" target="_blank" rel="noopener">Bizimle iletişime geç</a>
+        <a class="btn btn-primary" href="#projeler" data-i18n="discover">Projeleri keşfet →</a>
+        <a class="btn btn-secondary" href="https://wa.me/905382091986" target="_blank" rel="noopener" data-i18n="contact_us">Bizimle iletişime geç</a>
       </div>
       <div class="hero-note">
         <span><i class="mini-dot"></i> Türkiye merkezli</span>
@@ -66,36 +71,36 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
   <section id="projeler">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="kicker">EO Labs Portfolio</div><h2>Projelerimiz</h2></div>
-        <p>Farklı sektörlerde gerçek ihtiyaçlardan doğan ürünler geliştiriyoruz. Her proje kendi markasına, ürün mimarisine ve büyüme modeline sahip.</p>
+        <div><div class="kicker">EO Labs Portfolio</div><h2 data-i18n="projects_title">Projelerimiz</h2></div>
+        <p data-i18n="projects_desc">Farklı sektörlerde gerçek ihtiyaçlardan doğan ürünler geliştiriyoruz. Her proje kendi markasına, ürün mimarisine ve büyüme modeline sahip.</p>
       </div>
 
       <div class="projects">
         <article class="project">
           <div class="project-top"><span class="tag">Mobility / Automotive</span><span class="status">Aktif ürün</span></div>
           <h3>ParkPing</h3>
-          <p>QR ve NFC tabanlı akıllı araç iletişimi ve park asistanı. Telefon numarası paylaşmadan güvenli iletişim, araç yönetimi ve sürücü odaklı dijital servisler.</p>
+          <p data-i18n="parkping_desc">QR ve NFC tabanlı akıllı araç iletişimi ve park asistanı. Telefon numarası paylaşmadan güvenli iletişim, araç yönetimi ve sürücü odaklı dijital servisler.</p>
           <a class="project-link" href="https://parkping.com.tr" target="_blank" rel="noopener">parkping.com.tr →</a>
         </article>
 
         <article class="project">
           <div class="project-top"><span class="tag">Access / Parking Tech</span><span class="status">Geliştiriliyor</span></div>
           <h3>ParkFlow</h3>
-          <p>Kurumsal araç erişimi ve otopark yönetimi için ANPR, QR, cihaz yönetimi ve operasyon katmanlarını bir araya getiren platform.</p>
+          <p data-i18n="parkflow_desc">Kurumsal araç erişimi ve otopark yönetimi için ANPR, QR, cihaz yönetimi ve operasyon katmanlarını bir araya getiren platform.</p>
           <a class="project-link" href="https://www.parkflow.com.tr" target="_blank" rel="noopener">parkflow.com.tr →</a>
         </article>
 
         <article class="project">
           <div class="project-top"><span class="tag">B2B / Trade</span><span class="status">Geliştiriliyor</span></div>
           <h3>OnlineTurkey</h3>
-          <p>Türkiye’den güvenilir tedarikçi ve iş ortaklarına ulaşmayı kolaylaştıran, doğrulama ve sourcing deneyimi odaklı B2B iş ağı.</p>
+          <p data-i18n="onlineturkey_desc">Türkiye’den güvenilir tedarikçi ve iş ortaklarına ulaşmayı kolaylaştıran, doğrulama ve sourcing deneyimi odaklı B2B iş ağı.</p>
           <a class="project-link" href="https://onlineturkey.com" target="_blank" rel="noopener">onlineturkey.com →</a>
         </article>
 
         <article class="project">
           <div class="project-top"><span class="tag">AI / Customs Tech</span><span class="status">Aktif ürün</span></div>
           <h3>GümrükAI</h3>
-          <p>Yapay zekâ destekli gümrük ve dış ticaret yönetim platformu. GTİP sorgulama, risk analizi, belge yönetimi ve ithalat süreçlerini tek sistemde bir araya getirir.</p>
+          <p data-i18n="gumrukai_desc">Yapay zekâ destekli gümrük ve dış ticaret yönetim platformu. GTİP sorgulama, risk analizi, belge yönetimi ve ithalat süreçlerini tek sistemde bir araya getirir.</p>
           <a class="project-link" href="https://gumrukai.com" target="_blank" rel="noopener">gumrukai.com →</a>
         </article>
       </div>
@@ -105,19 +110,19 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
   <section id="hakkimizda">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="kicker">Nasıl çalışıyoruz</div><h2>Az katman. Net ürün. Gerçek kullanım.</h2></div>
-        <p>EO Labs için teknoloji vitrin değil, çalışan üründür. Tasarım, yazılım ve ürün kararlarını aynı sistem içinde yönetir; gereksiz karmaşıklık yerine ölçülebilir kullanıcı değerine odaklanırız.</p>
+        <div><div class="kicker" data-i18n="how_kicker">Nasıl çalışıyoruz</div><h2 data-i18n="how_title">Az katman. Net ürün. Gerçek kullanım.</h2></div>
+        <p data-i18n="how_desc">EO Labs için teknoloji vitrin değil, çalışan üründür. Tasarım, yazılım ve ürün kararlarını aynı sistem içinde yönetir; gereksiz karmaşıklık yerine ölçülebilir kullanıcı değerine odaklanırız.</p>
       </div>
       <div class="about-grid">
         <div class="about-card">
-          <h3>Bir ürün stüdyosu gibi düşünüyoruz.</h3>
-          <p>Mobil uygulamadan web platformuna, fiziksel üründen kurumsal yönetim katmanına kadar aynı markanın bütün temas noktalarını birlikte ele alıyoruz. Hedefimiz yalnızca çalışan yazılım değil; güven veren, büyüyebilen ve gerçek dünyada kullanılabilen ürünler ortaya çıkarmak.</p>
+          <h3 data-i18n="studio_title">Bir ürün stüdyosu gibi düşünüyoruz.</h3>
+          <p data-i18n="studio_desc">Mobil uygulamadan web platformuna, fiziksel üründen kurumsal yönetim katmanına kadar aynı markanın bütün temas noktalarını birlikte ele alıyoruz. Hedefimiz yalnızca çalışan yazılım değil; güven veren, büyüyebilen ve gerçek dünyada kullanılabilen ürünler ortaya çıkarmak.</p>
         </div>
         <div class="principles">
-          <h3>Temel yaklaşım</h3>
-          <div class="principle"><div class="num">01</div><div><b>Ürün önce</b><span>Teknolojiyi kullanıcı ihtiyacının arkasına koyarız.</span></div></div>
-          <div class="principle"><div class="num">02</div><div><b>Tek sistem</b><span>Mobil, web, operasyon ve marka aynı mimarinin parçalarıdır.</span></div></div>
-          <div class="principle"><div class="num">03</div><div><b>Gerçek test</b><span>Kararlarımızı gerçek cihaz ve gerçek kullanım senaryolarıyla doğrularız.</span></div></div>
+          <h3 data-i18n="principles_title">Temel yaklaşım</h3>
+          <div class="principle"><div class="num">01</div><div><b data-i18n="p1_title">Ürün önce</b><span data-i18n="p1_desc">Teknolojiyi kullanıcı ihtiyacının arkasına koyarız.</span></div></div>
+          <div class="principle"><div class="num">02</div><div><b data-i18n="p2_title">Tek sistem</b><span data-i18n="p2_desc">Mobil, web, operasyon ve marka aynı mimarinin parçalarıdır.</span></div></div>
+          <div class="principle"><div class="num">03</div><div><b data-i18n="p3_title">Gerçek test</b><span data-i18n="p3_desc">Kararlarımızı gerçek cihaz ve gerçek kullanım senaryolarıyla doğrularız.</span></div></div>
         </div>
       </div>
     </div>
@@ -128,23 +133,23 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
     <div class="wrap">
       <div class="request-wrap">
         <div class="request-intro">
-          <div class="kicker">Yeni Proje Başvurusu</div>
-          <h2>Bir fikriniz mi var? Birlikte değerlendirelim.</h2>
-          <p>Web, mobil, yapay zekâ ve dijital ürün fikirlerinizi teknik ve ticari açıdan ön değerlendiriyoruz. Uygun projeleri analizden tasarıma, geliştirmeden yayına kadar anahtar teslim üstlenebiliriz.</p>
+          <div class="kicker" data-i18n="request_kicker">Yeni Proje Başvurusu</div>
+          <h2 data-i18n="request_title">Bir fikriniz mi var? Birlikte değerlendirelim.</h2>
+          <p data-i18n="request_desc">Web, mobil, yapay zekâ ve dijital ürün fikirlerinizi teknik ve ticari açıdan ön değerlendiriyoruz. Uygun projeleri analizden tasarıma, geliştirmeden yayına kadar anahtar teslim üstlenebiliriz.</p>
           <div class="request-points">
-            <div class="request-point">Teknik ve ürün odaklı ön değerlendirme</div>
-            <div class="request-point">Anahtar teslim geliştirme seçeneği</div>
-            <div class="request-point">Uygun projelerde iş ortaklığı modeli değerlendirmesi</div>
+            <div class="request-point" data-i18n="request_p1">Teknik ve ürün odaklı ön değerlendirme</div>
+            <div class="request-point" data-i18n="request_p2">Anahtar teslim geliştirme seçeneği</div>
+            <div class="request-point" data-i18n="request_p3">Uygun projelerde iş ortaklığı modeli değerlendirmesi</div>
           </div>
         </div>
 
         <form class="request-form" id="projectRequestForm">
           <div class="field">
-            <label for="projectName">Proje / fikir adı</label>
+            <label for="projectName" data-i18n="f_name">Proje / fikir adı</label>
             <input id="projectName" name="projectName" type="text" maxlength="80" placeholder="Örn. Akıllı servis platformu" required>
           </div>
           <div class="field">
-            <label for="projectType">Proje türü</label>
+            <label for="projectType" data-i18n="f_type">Proje türü</label>
             <select id="projectType" name="projectType" required>
               <option value="">Seçiniz</option>
               <option>Web Platformu</option>
@@ -155,7 +160,7 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
             </select>
           </div>
           <div class="field">
-            <label for="projectModel">Çalışma modeli</label>
+            <label for="projectModel" data-i18n="f_model">Çalışma modeli</label>
             <select id="projectModel" name="projectModel" required>
               <option value="">Seçiniz</option>
               <option>Anahtar teslim geliştirme</option>
@@ -164,15 +169,15 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
             </select>
           </div>
           <div class="field">
-            <label for="projectDesc">Kısaca anlatın</label>
+            <label for="projectDesc" data-i18n="f_desc">Kısaca anlatın</label>
             <textarea id="projectDesc" name="projectDesc" maxlength="1200" placeholder="Problemi, hedef kullanıcıyı ve ne geliştirmek istediğinizi kısaca yazın." required></textarea>
           </div>
           <div class="field">
-            <label for="contactInfo">İletişim bilgisi</label>
+            <label for="contactInfo" data-i18n="f_contact">İletişim bilgisi</label>
             <input id="contactInfo" name="contactInfo" type="text" maxlength="120" placeholder="Adınız + telefon veya e-posta" required>
           </div>
-          <div class="request-note">Başvurular ön değerlendirmeye tabidir. Gönderilen fikir ve bilgiler yalnızca başvuruyu değerlendirmek amacıyla incelenir; başvuru otomatik olarak proje kabulü veya iş ortaklığı anlamına gelmez.</div>
-          <button class="btn btn-primary" type="submit">Talep Oluştur →</button>
+          <div class="request-note" data-i18n="request_note">Başvurular ön değerlendirmeye tabidir. Gönderilen fikir ve bilgiler yalnızca başvuruyu değerlendirmek amacıyla incelenir; başvuru otomatik olarak proje kabulü veya iş ortaklığı anlamına gelmez.</div>
+          <button class="btn btn-primary" type="submit" data-i18n="submit_request">Talep Oluştur →</button>
         </form>
       </div>
     </div>
@@ -181,9 +186,9 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
   <section class="contact" id="iletisim">
     <div class="wrap">
       <div class="contact-box">
-        <h2>EO Labs ile iletişime geçin.</h2>
-        <p>Projelerimiz, kurumsal iş birlikleri veya teknoloji odaklı yeni fırsatlar için doğrudan bize ulaşabilirsiniz.</p>
-        <a class="btn btn-primary" href="https://wa.me/905382091986" target="_blank" rel="noopener">WhatsApp üzerinden yaz →</a>
+        <h2 data-i18n="contact_title">EO Labs ile iletişime geçin.</h2>
+        <p data-i18n="contact_desc">Projelerimiz, kurumsal iş birlikleri veya teknoloji odaklı yeni fırsatlar için doğrudan bize ulaşabilirsiniz.</p>
+        <a class="btn btn-primary" href="https://wa.me/905382091986" target="_blank" rel="noopener" data-i18n="whatsapp_write">WhatsApp üzerinden yaz →</a>
       </div>
     </div>
   </section>
@@ -191,7 +196,7 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
 
 <footer>
   <div class="wrap footer-row">
-    <div>© 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır.</div>
+    <div><span data-i18n="footer_copy">© 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır.</span></div>
     <div class="footer-links">
       <a href="#projeler">Projeler</a>
       <a href="#hakkimizda">Kurumsal</a>
@@ -205,6 +210,72 @@ footer{padding:42px 0 100px;color:#717986;font-size:13px}.footer-row{display:fle
   WhatsApp
 </a>
 <script>
+const I18N={
+tr:{
+nav_request:"Talep Oluştur",nav_contact:"İletişim",eyebrow:"Independent Technology Studio",
+hero_title:'Fikri ürüne, ürünü <span>çalışan sisteme</span> dönüştürüyoruz.',
+hero_desc:"EO Labs; araç teknolojileri, dijital platformlar ve yeni nesil internet ürünleri geliştiren bağımsız bir teknoloji stüdyosudur. Tek bir ürün değil, birbirini tamamlayan sürdürülebilir dijital sistemler kuruyoruz.",
+discover:"Projeleri keşfet →",contact_us:"Bizimle iletişime geç",tr_based:"Türkiye merkezli",mobile_web:"Mobil + Web",product_focus:"Ürün odaklı geliştirme",
+projects_title:"Projelerimiz",projects_desc:"Farklı sektörlerde gerçek ihtiyaçlardan doğan ürünler geliştiriyoruz. Her proje kendi markasına, ürün mimarisine ve büyüme modeline sahip.",
+parkping_desc:"QR ve NFC tabanlı akıllı araç iletişimi ve park asistanı. Telefon numarası paylaşmadan güvenli iletişim, araç yönetimi ve sürücü odaklı dijital servisler.",
+parkflow_desc:"Kurumsal araç erişimi ve otopark yönetimi için ANPR, QR, cihaz yönetimi ve operasyon katmanlarını bir araya getiren platform.",
+onlineturkey_desc:"Türkiye’den güvenilir tedarikçi ve iş ortaklarına ulaşmayı kolaylaştıran, doğrulama ve sourcing deneyimi odaklı B2B iş ağı.",
+gumrukai_desc:"Yapay zekâ destekli gümrük ve dış ticaret yönetim platformu. GTİP sorgulama, risk analizi, belge yönetimi ve ithalat süreçlerini tek sistemde bir araya getirir.",
+how_kicker:"Nasıl çalışıyoruz",how_title:"Az katman. Net ürün. Gerçek kullanım.",how_desc:"EO Labs için teknoloji vitrin değil, çalışan üründür. Tasarım, yazılım ve ürün kararlarını aynı sistem içinde yönetir; gereksiz karmaşıklık yerine ölçülebilir kullanıcı değerine odaklanırız.",
+studio_title:"Bir ürün stüdyosu gibi düşünüyoruz.",studio_desc:"Mobil uygulamadan web platformuna, fiziksel üründen kurumsal yönetim katmanına kadar aynı markanın bütün temas noktalarını birlikte ele alıyoruz. Hedefimiz yalnızca çalışan yazılım değil; güven veren, büyüyebilen ve gerçek dünyada kullanılabilen ürünler ortaya çıkarmak.",
+principles_title:"Temel yaklaşım",p1_title:"Ürün önce",p1_desc:"Teknolojiyi kullanıcı ihtiyacının arkasına koyarız.",p2_title:"Tek sistem",p2_desc:"Mobil, web, operasyon ve marka aynı mimarinin parçalarıdır.",p3_title:"Gerçek test",p3_desc:"Kararlarımızı gerçek cihaz ve gerçek kullanım senaryolarıyla doğrularız.",
+request_kicker:"Yeni Proje Başvurusu",request_title:"Bir fikriniz mi var? Birlikte değerlendirelim.",request_desc:"Web, mobil, yapay zekâ ve dijital ürün fikirlerinizi teknik ve ticari açıdan ön değerlendiriyoruz. Uygun projeleri analizden tasarıma, geliştirmeden yayına kadar anahtar teslim üstlenebiliriz.",
+request_p1:"Teknik ve ürün odaklı ön değerlendirme",request_p2:"Anahtar teslim geliştirme seçeneği",request_p3:"Uygun projelerde iş ortaklığı modeli değerlendirmesi",
+f_name:"Proje / fikir adı",f_type:"Proje türü",f_model:"Çalışma modeli",f_desc:"Kısaca anlatın",f_contact:"İletişim bilgisi",request_note:"Başvurular ön değerlendirmeye tabidir. Gönderilen fikir ve bilgiler yalnızca başvuruyu değerlendirmek amacıyla incelenir; başvuru otomatik olarak proje kabulü veya iş ortaklığı anlamına gelmez.",submit_request:"Talep Oluştur →",
+contact_title:"EO Labs ile iletişime geçin.",contact_desc:"Projelerimiz, kurumsal iş birlikleri veya teknoloji odaklı yeni fırsatlar için doğrudan bize ulaşabilirsiniz.",whatsapp_write:"WhatsApp üzerinden yaz →",footer_copy:"© 2026 EO Labs Yazılım Teknolojileri. Tüm hakları saklıdır."
+},
+en:{
+nav_request:"Submit a Project",nav_contact:"Contact",eyebrow:"Independent Technology Studio",
+hero_title:'We turn ideas into products, and products into <span>working systems</span>.',
+hero_desc:"EO Labs is an independent technology studio building automotive technologies, digital platforms and next-generation internet products. We create sustainable digital systems designed to work together.",
+discover:"Explore projects →",contact_us:"Contact us",tr_based:"Based in Türkiye",mobile_web:"Mobile + Web",product_focus:"Product-led development",
+projects_title:"Our Projects",projects_desc:"We build products born from real needs across different industries. Each project has its own brand, product architecture and growth model.",
+parkping_desc:"A QR and NFC-based smart vehicle communication and parking assistant platform enabling secure contact, vehicle management and driver-focused digital services without sharing phone numbers.",
+parkflow_desc:"A corporate vehicle access and parking management platform combining ANPR, QR, device management and operational layers.",
+onlineturkey_desc:"A B2B business network focused on trusted supplier discovery, verification and sourcing from Türkiye.",
+gumrukai_desc:"An AI-powered customs and foreign trade management platform combining HS/GTIP lookup, risk analysis, document management and import workflows in one system.",
+how_kicker:"How we work",how_title:"Fewer layers. Clear product. Real use.",how_desc:"At EO Labs, technology is not decoration; it is a working product. We manage design, software and product decisions as one system, focusing on measurable user value instead of unnecessary complexity.",
+studio_title:"We think like a product studio.",studio_desc:"From mobile apps and web platforms to physical products and enterprise management layers, we design every touchpoint as part of one system. Our goal is not only working software, but products that inspire trust, scale and operate in the real world.",
+principles_title:"Core principles",p1_title:"Product first",p1_desc:"Technology follows the user need.",p2_title:"One system",p2_desc:"Mobile, web, operations and brand are parts of the same architecture.",p3_title:"Real testing",p3_desc:"We validate decisions with real devices and real usage scenarios.",
+request_kicker:"New Project Request",request_title:"Have an idea? Let’s evaluate it together.",request_desc:"We assess web, mobile, AI and digital product ideas from both technical and commercial perspectives. Selected projects can be delivered end-to-end, from analysis and design to development and launch.",
+request_p1:"Technical and product-focused pre-assessment",request_p2:"Turnkey development option",request_p3:"Partnership model assessment for selected projects",
+f_name:"Project / idea name",f_type:"Project type",f_model:"Engagement model",f_desc:"Tell us briefly",f_contact:"Contact information",request_note:"Submissions are subject to preliminary review. Shared ideas and information are reviewed only for evaluation purposes; submission does not automatically imply project acceptance or partnership.",submit_request:"Submit Request →",
+contact_title:"Contact EO Labs.",contact_desc:"Reach us directly for our projects, corporate partnerships or new technology opportunities.",whatsapp_write:"Message us on WhatsApp →",footer_copy:"© 2026 EO Labs Software Technologies. All rights reserved."
+},
+fr:{
+nav_request:"Soumettre un projet",nav_contact:"Contact",eyebrow:"Studio technologique indépendant",
+hero_title:'Nous transformons les idées en produits, puis en <span>systèmes opérationnels</span>.',
+hero_desc:"EO Labs est un studio technologique indépendant qui développe des technologies automobiles, des plateformes numériques et des produits internet de nouvelle génération. Nous créons des systèmes numériques durables conçus pour fonctionner ensemble.",
+discover:"Découvrir les projets →",contact_us:"Nous contacter",tr_based:"Basé en Türkiye",mobile_web:"Mobile + Web",product_focus:"Développement orienté produit",
+projects_title:"Nos projets",projects_desc:"Nous développons des produits issus de besoins réels dans différents secteurs. Chaque projet possède sa propre marque, son architecture produit et son modèle de croissance.",
+parkping_desc:"Une solution intelligente de communication automobile et d’assistance au stationnement basée sur QR et NFC, permettant un contact sécurisé, la gestion du véhicule et des services numériques sans partager de numéro de téléphone.",
+parkflow_desc:"Une plateforme de gestion des accès véhicules et du stationnement d’entreprise réunissant ANPR, QR, gestion des appareils et couches opérationnelles.",
+onlineturkey_desc:"Un réseau B2B axé sur la recherche de fournisseurs fiables en Türkiye, la vérification et l’expérience de sourcing.",
+gumrukai_desc:"Une plateforme de gestion douanière et du commerce extérieur assistée par IA, réunissant recherche GTIP/HS, analyse des risques, gestion documentaire et suivi des importations.",
+how_kicker:"Notre méthode",how_title:"Moins de couches. Un produit clair. Un usage réel.",how_desc:"Chez EO Labs, la technologie n’est pas une vitrine : c’est un produit opérationnel. Nous pilotons design, logiciel et décisions produit dans un même système, avec un focus sur la valeur utilisateur mesurable.",
+studio_title:"Nous pensons comme un studio produit.",studio_desc:"De l’application mobile à la plateforme web, du produit physique aux outils de gestion d’entreprise, nous traitons chaque point de contact comme une partie d’un même système. Notre objectif : créer des produits fiables, évolutifs et utilisables dans le monde réel.",
+principles_title:"Principes clés",p1_title:"Le produit d’abord",p1_desc:"La technologie suit le besoin utilisateur.",p2_title:"Un seul système",p2_desc:"Mobile, web, opérations et marque font partie de la même architecture.",p3_title:"Tests réels",p3_desc:"Nous validons nos décisions sur de vrais appareils et dans de vrais scénarios d’usage.",
+request_kicker:"Nouvelle demande de projet",request_title:"Vous avez une idée ? Évaluons-la ensemble.",request_desc:"Nous évaluons les idées web, mobile, IA et produits numériques sur les plans technique et commercial. Les projets retenus peuvent être livrés clé en main, de l’analyse et du design au développement et au lancement.",
+request_p1:"Pré-évaluation technique et produit",request_p2:"Option de développement clé en main",request_p3:"Évaluation d’un modèle de partenariat pour certains projets",
+f_name:"Nom du projet / de l’idée",f_type:"Type de projet",f_model:"Mode de collaboration",f_desc:"Présentez-le brièvement",f_contact:"Coordonnées",request_note:"Les demandes font l’objet d’une pré-évaluation. Les idées et informations transmises sont examinées uniquement à des fins d’évaluation ; l’envoi ne vaut pas acceptation automatique du projet ni partenariat.",submit_request:"Soumettre la demande →",
+contact_title:"Contactez EO Labs.",contact_desc:"Contactez-nous directement au sujet de nos projets, partenariats professionnels ou nouvelles opportunités technologiques.",whatsapp_write:"Écrire sur WhatsApp →",footer_copy:"© 2026 EO Labs Technologies Logicielles. Tous droits réservés."
+}};
+function setLang(lang){
+  const dict=I18N[lang]||I18N.tr;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(dict[k]) el.textContent=dict[k];});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(dict[k]) el.innerHTML=dict[k];});
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  localStorage.setItem('eolabs-lang',lang);
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+setLang(localStorage.getItem('eolabs-lang')||'tr');
+
 document.getElementById('projectRequestForm').addEventListener('submit',function(e){
   e.preventDefault();
   const name=document.getElementById('projectName').value.trim();
